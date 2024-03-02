@@ -126,6 +126,38 @@ return {
     --  You can press `g?` for help in this menu
     require('mason').setup()
 
+    -- Diagnostics
+    local signs = {
+
+      { name = 'DiagnosticSignError', text = '' },
+      { name = 'DiagnosticSignWarn', text = '' },
+      { name = 'DiagnosticSignHint', text = '' },
+      { name = 'DiagnosticSignInfo', text = '' },
+    }
+
+    for _, sign in ipairs(signs) do
+      vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
+    end
+
+    local config = {
+      signs = {
+        active = signs, -- show signs
+      },
+      update_in_insert = true,
+      underline = true,
+      severity_sort = true,
+      float = {
+        focusable = true,
+        style = 'minimal',
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+      },
+    }
+
+    vim.diagnostic.config(config)
+
     -- You can add other tools here that you want Mason to install
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
