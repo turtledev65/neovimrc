@@ -8,6 +8,7 @@ return { -- Useful plugin to show you pending keybinds.
     require('which-key').register({
       ['<leader>f'] = { name = '[F]ind', _ = 'which_key_ignore' },
       ['<leader>l'] = { name = '[L]sp', _ = 'which_key_ignore' },
+      ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
     })
   end,
 }

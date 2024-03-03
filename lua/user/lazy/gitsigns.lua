@@ -1,6 +1,13 @@
 return { -- Adds git related signs to the gutter, as well as utilities for managing changes
   'lewis6991/gitsigns.nvim',
   config = function()
+    local map = function(keys, func, desc)
+      vim.keymap.set('n', keys, func, { desc = 'Git: ' .. desc })
+    end
+
+    map('<leader>gj', require('gitsigns').next_hunk, 'Next Hunk')
+    map('<leader>gk', require('gitsigns').prev_hunk, 'Previous Hunk')
+
     require('gitsigns').setup({
       signs = {
         add = { hl = 'GitSignsAdd', text = ' ', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
