@@ -2,9 +2,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Toggle Lexplorer
-vim.keymap.set('n', '<leader>e', ':Lexplore<CR>')
-
 -- Better Window Navigation
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>')
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>')
@@ -35,6 +32,10 @@ vim.keymap.set('x', '<A-k>', ":m '<-2<CR>gv=gv")
 
 -- Enter normal mode with jk
 vim.keymap.set('i', 'jk', '<ESC>')
+
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
+vim.keymap.set('n', '<leader>Y', [["+Y]])
 
 -- Reload Config
 vim.keymap.set('n', '<leader><leader>', function()
