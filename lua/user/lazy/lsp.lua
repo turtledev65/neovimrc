@@ -40,10 +40,10 @@ return {
         map('<leader>lr', vim.lsp.buf.rename, '[R]ename')
         map('<leader>ls', require('telescope.builtin').lsp_document_symbols, 'Document [S]ymbols')
         map('<leader>lS', require('telescope.builtin').lsp_document_symbols, 'Workspace [S]ymbols')
-        map('<leader>lj', function()
+        map(']d', function()
           vim.diagnostic.goto_next({ buffer = 0 })
         end, 'Next Diagnostic')
-        map('<leader>lk', function()
+        map('[d', function()
           vim.diagnostic.goto_prev({ buffer = 0 })
         end, 'Previous Diagnostic')
 

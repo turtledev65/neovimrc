@@ -2,6 +2,7 @@ return {
   {
     'ellisonleao/gruvbox.nvim',
     config = function()
+      vim.o.background = 'dark'
       require('gruvbox').setup({
         terminal_colors = true, -- add neovim terminal colors
         undercurl = true,

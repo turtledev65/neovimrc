@@ -63,6 +63,7 @@ return { -- Autocompletion
   },
   config = function()
     local cmp = require('cmp')
+    local cmp_window = require('cmp.config.window')
     local luasnip = require('luasnip')
     luasnip.config.setup({})
 
@@ -137,6 +138,10 @@ return { -- Autocompletion
         { name = 'luasnip' },
         { name = 'buffer' },
         { name = 'path' },
+      },
+      window = {
+        completion = cmp_window.bordered(),
+        documentation = cmp_window.bordered(),
       },
     })
   end,

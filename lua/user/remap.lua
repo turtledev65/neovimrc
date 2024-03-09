@@ -33,9 +33,20 @@ vim.keymap.set('x', '<A-k>', ":m '<-2<CR>gv=gv")
 -- Enter normal mode with jk
 vim.keymap.set('i', 'jk', '<ESC>')
 
+-- Increment/decrement
+vim.keymap.set('n', '-', '<C-x>')
+vim.keymap.set('n', '+', '<C-a>')
+
+-- Select all
+vim.keymap.set('n', '<C-a>', 'gg<S-v>G')
+
+-- Yank to the system clippboard
 vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]])
 vim.keymap.set('n', '<leader>Y', [["+Y]])
-vim.keymap.set('n', '<leader>Y', [["+Y]])
+
+-- Paste from system clippboard
+vim.keymap.set('n', '<leader>p', [["+p]])
+vim.keymap.set('n', '<leader>P', [["+P]])
 
 -- Reload Config
 vim.keymap.set('n', '<leader><leader>', function()
