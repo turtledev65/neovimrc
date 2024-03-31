@@ -58,7 +58,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 
 -- Disable wrapping
-vim.opt.wrap = true
+vim.opt.wrap = false
 vim.opt.linebreak = true
 
 -- Settings for Netrw
